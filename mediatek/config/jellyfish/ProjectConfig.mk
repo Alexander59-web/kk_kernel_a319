@@ -163,7 +163,7 @@ CUSTOM_KERNEL_SUB_IMGSENSOR=s5k8aayx_yuv
 CUSTOM_KERNEL_SUB_LENS=dummy_lens
 
 # touch driver  need to report correct touch axes
-CUSTOM_KERNEL_TOUCHPANEL=GT9XX_hotknot
+CUSTOM_KERNEL_TOUCHPANEL=ft5206
 
 # Configuration for USB PHY
 CUSTOM_KERNEL_USB=mt6577
@@ -172,7 +172,7 @@ CUSTOM_KERNEL_USB=mt6577
 CUSTOM_KERNEL_VIBRATOR=vibrator
 
 # To choose LK LCM driver name
-CUSTOM_LK_LCM=nt35510_dsi_cmd_6572
+CUSTOM_LK_LCM=otm8019a_wvga_dsi_vdo
 CUSTOM_LK_LOGO=cu_wvga
 
 # Support customer to implement and apply their own RSA security functions
@@ -1463,7 +1463,7 @@ MTK_HDMI_SUPPORT=no
 BOOT_LOGO=cu_wvga
 
 # To choose kernel LCM driver name
-CUSTOM_KERNEL_LCM=nt35510_dsi_cmd_6572
+CUSTOM_KERNEL_LCM=otm8019a_wvga_dsi_vdo
 
 # To choose uboot LCM driver name
 CUSTOM_UBOOT_LCM=nt35582_mcu_6575
