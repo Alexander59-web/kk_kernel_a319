@@ -165,7 +165,7 @@ extern LCM_DRIVER nt35517_qhd_dsi_vdo_lcm_drv;
 extern LCM_DRIVER hx8389b_qhd_dsi_vdo_lgd_lcm_drv;
 extern LCM_DRIVER it6151_fhd_edp_dsi_video_auo_lcm_drv;
 extern LCM_DRIVER tf070mc_rgb_v18_mt6571_lcm_drv;
-extern LCM_DRIVER zs070ih5015b3h6_mt6571_lcm_drv;
+extern LCM_DRIVER otm8019a_wvga_dsi_vdo_lcm_drv;
 LCM_DRIVER* lcm_driver_list[] = 
 { 
 #if defined(OTM8018B_DSI_VDO_TXD_FWVGA)
@@ -748,7 +748,9 @@ LCM_DRIVER* lcm_driver_list[] =
     &it6151_fhd_edp_dsi_video_auo_lcm_drv,
 #endif
 
-
+#if defined(OTM8019A_WVGA_DSI_VDO)
+    &otm8019a_wvga_dsi_vdo_lcm_drv,
+#endif
 };
 
 #define LCM_COMPILE_ASSERT(condition) LCM_COMPILE_ASSERT_X(condition, __LINE__)
