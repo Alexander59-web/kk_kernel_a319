@@ -357,7 +357,7 @@ sub GetMBRStartAddress(){
 			}
 			#print "\$Min_user_region=$Min_user_region\n";
 		}else{
-			$MAX_address = 6*1024; #default Fix me!!!
+			$MAX_address = 12*1024; #default Fix me!!!
 			my $error_msg="ERROR:Ptgen CAN NOT find $part_num in $REGION_TABLE_FILENAME\n";
 			print $error_msg;
 #			die $error_msg;
