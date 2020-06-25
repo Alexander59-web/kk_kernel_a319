@@ -534,7 +534,7 @@ EXPORT_SYMBOL(mt_wifi_power_off);
         .cmdrddly		    = 0,
         .host_function	= MSDC_EMMC,
         .boot			      = MSDC_BOOT_EN,
-        .cd_level		    = MSDC_CD_LOW,
+        .cd_level		    = MSDC_CD_HIGH,
     
     };
     #else
@@ -566,7 +566,7 @@ EXPORT_SYMBOL(mt_wifi_power_off);
         .cmdrddly		    = 0,        
         .host_function	= MSDC_SD,
         .boot			      = 0,
-        .cd_level		    = MSDC_CD_LOW,
+        .cd_level		    = MSDC_CD_HIGH,
     
     };
     #endif
@@ -631,7 +631,7 @@ EXPORT_SYMBOL(mt_wifi_power_off);
         .cmdrddly		    = 0,	    
         .host_function	= MSDC_SD,
         .boot			= 0,
-        .cd_level		= MSDC_CD_LOW,
+        .cd_level		= MSDC_CD_HIGH,
     };
     #endif
 #endif
@@ -697,7 +697,7 @@ struct msdc_hw msdc2_hw = {
 			.cmdrddly		= 0,
     .host_function	= MSDC_SD,
     .boot			= 0,
-    .cd_level		= MSDC_CD_LOW,
+    .cd_level		= MSDC_CD_HIGH,
 };
     #endif
 #endif

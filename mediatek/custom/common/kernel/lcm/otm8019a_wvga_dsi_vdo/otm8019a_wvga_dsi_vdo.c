@@ -1,13 +1,17 @@
-#ifdef BUILD_LK
-#else
+#ifndef BUILD_LK
 #include <linux/string.h>
-#if defined(BUILD_UBOOT)
-#include <asm/arch/mt_gpio.h>
-#else
-#include <mach/mt_gpio.h>
 #endif
-#endif
+
 #include "lcm_drv.h"
+
+#ifdef BUILD_LK
+	#include <platform/mt_gpio.h>
+	#include <string.h>
+#elif defined(BUILD_UBOOT)
+	#include <asm/arch/mt_gpio.h>
+#else
+	#include <mach/mt_gpio.h>
+#endif
 
 // ---------------------------------------------------------------------------
 //  Local Constants
@@ -411,24 +415,7 @@ static unsigned int lcm_esd_check(void)
 static unsigned int lcm_esd_recover(void)
 {
 #ifndef BUILD_LK
-
-  unsigned int data_array[16];
-
-    printk("lcm_esd_recover enter \n");
-    
     lcm_init();
-
-    data_array[0]=0x00110500;
-    dsi_set_cmdq(&data_array, 1, 1);
-    MDELAY(50);
-    
-    data_array[0]=0x00290500;
-    dsi_set_cmdq(&data_array, 1, 1);
-    
-    data_array[0]= 0x00023902;
-    data_array[1]= 0xFF51;
-    dsi_set_cmdq(&data_array, 2, 1);
-    MDELAY(10);
 #endif
 
     return TRUE;
@@ -445,7 +432,7 @@ LCM_DRIVER otm8019a_wvga_dsi_vdo_lcm_drv =
 	.resume         = lcm_resume,
 	.compare_id     = lcm_compare_id,	
 	//.esd_check    = lcm_esd_check,
-    //.esd_recover  = lcm_esd_recover,
+    .esd_recover  = lcm_esd_recover,
 #if (LCM_DSI_CMD_MODE)
 	.set_backlight	= lcm_setbacklight,
     .update         = lcm_update,
